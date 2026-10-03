@@ -1,0 +1,46 @@
+# ---------- OS / editors ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vs/
+*.swp
+.vscode/*
+!.vscode/extensions.json
+
+# ---------- Secrets & local config ----------
+.env
+.env.local
+.env.*.local
+*.local
+appsettings.*.local.json
+*.pubxml.user
+
+# ---------- Frontend (Vite / Node) ----------
+node_modules/
+dist/
+dist-ssr/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ---------- Backend (.NET) ----------
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+TestResults/
+*.user
+*.suo
+*.binlog
+publish/
+artifacts/
+
+# ---------- Transcript-AI runtime output ----------
+AudioFiles/
+Transcripts/
+
+# ---------- Local agent/tooling config ----------
+.claude/
