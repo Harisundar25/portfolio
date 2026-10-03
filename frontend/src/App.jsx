@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { AnimatePresence, MotionConfig } from "framer-motion";
 import Lenis from "lenis";
 import { Route, Routes } from "react-router";
@@ -11,6 +11,16 @@ import Footer from "./components/layout/Footer";
 import RouteScrollManager from "./components/layout/RouteScrollManager";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+
+const Projects = lazy(() => import("./pages/Projects"));
+
+function PageFallback() {
+  return (
+    <div className="flex min-h-screen items-center justify-center" role="status" aria-label="Loading page">
+      <span className="h-10 w-10 animate-spin rounded-full border-2 border-accent-primary/20 border-t-accent-primary" />
+    </div>
+  );
+}
 
 const prefersReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -73,6 +83,14 @@ function Shell() {
           <main id="main" className="relative bg-background-primary text-text-body">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route
+                path="/projects"
+                element={
+                  <Suspense fallback={<PageFallback />}>
+                    <Projects />
+                  </Suspense>
+                }
+              />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

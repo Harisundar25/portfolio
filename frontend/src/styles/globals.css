@@ -43,6 +43,17 @@
   /* Animations */
   --animate-marquee: marquee var(--marquee-duration, 45s) linear infinite;
   --animate-marquee-reverse: marquee-reverse var(--marquee-duration, 45s) linear infinite;
+  --animate-eq: eq 1.2s ease-in-out infinite;
+
+  @keyframes eq {
+    0%,
+    100% {
+      transform: scaleY(0.35);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
 
   @keyframes marquee {
     from {

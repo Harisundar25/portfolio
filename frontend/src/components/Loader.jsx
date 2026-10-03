@@ -38,6 +38,9 @@ export default function Loader({ onComplete }) {
     const fontsFallback = setTimeout(() => {
       fontsReady = true;
     }, 3500);
+    // Failsafe: requestAnimationFrame is paused in hidden tabs and some prerenderers,
+    // so make sure the site content always mounts.
+    const hardStop = setTimeout(onComplete, reduceMotion ? 1500 : 6000);
 
     const tick = (now) => {
       const t = Math.min(1, (now - start) / duration);
@@ -55,6 +58,7 @@ export default function Loader({ onComplete }) {
     return () => {
       cancelAnimationFrame(frame);
       clearTimeout(fontsFallback);
+      clearTimeout(hardStop);
       clearTimeout(finishTimer);
     };
   }, [onComplete, reduceMotion]);
