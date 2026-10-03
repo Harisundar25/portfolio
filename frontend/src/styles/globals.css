@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* Design tokens — cinematic dual-tone neon dark theme
+   (adapted from awwwards-style-portfolio-2026 by Jeeva V, MIT).
+   `static` keeps every token available as a CSS variable for var() usage. */
+@theme static {
+  /* Colors */
+  --color-background-primary: #050b14;
+  --color-background-secondary: #0b1220;
+  --color-background-surface: #0f1a2b;
+  --color-background-glass: rgba(10, 15, 25, 0.55);
+
+  --color-border-default: rgba(255, 255, 255, 0.12);
+  --color-border-soft: rgba(255, 255, 255, 0.08);
+
+  --color-text-heading: #f8faff;
+  --color-text-body: #b8c4d9;
+  --color-text-muted: #7c8ba1;
+  --color-text-disabled: #4e5b6e;
+
+  --color-accent-primary: #00d4ff;
+  --color-accent-primary-hover: #22e3ff;
+  --color-accent-secondary: #ff6a00;
+  --color-accent-secondary-hover: #ff8533;
+
+  --color-status-success: #22c55e;
+  --color-status-warning: #facc15;
+  --color-status-danger: #ef4444;
+  --color-status-info: #38bdf8;
+
+  /* Effects */
+  --blur-glass: 18px;
+  --shadow-glow-primary: 0 0 25px rgba(0, 212, 255, 0.35);
+  --shadow-glow-secondary: 0 0 25px rgba(255, 106, 0, 0.35);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.55);
+
+  /* Fonts */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Outfit", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Animations */
+  --animate-marquee: marquee var(--marquee-duration, 45s) linear infinite;
+  --animate-marquee-reverse: marquee-reverse var(--marquee-duration, 45s) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+:root {
+  --image-gradient-brand: linear-gradient(90deg, #00d4ff 0%, #ff6a00 100%);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smoothing */
+  position: relative;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-heading);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Lenis recommended styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Utilities */
+@utility glass-panel {
+  background-color: var(--color-background-glass);
+  backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--color-border-default);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+@utility text-gradient-brand {
+  background-image: var(--image-gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@utility mask-radial {
+  mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
