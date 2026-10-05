@@ -17,7 +17,6 @@ import { TbBrandCSharp, TbBrandVisualStudio, TbDatabase } from "react-icons/tb";
 // Brand colours are lightened where needed so they stay legible on the navy background.
 const ICONS = {
   "C# / .NET": { icon: TbBrandCSharp, color: "#B07FE0" },
-  ".NET Core": { icon: SiDotnet, color: "#8C6CF2" },
   ".NET Framework": { icon: SiDotnet, color: "#8C6CF2" },
   "ASP.NET Core": { icon: SiDotnet, color: "#8C6CF2" },
   "SQL Server": { icon: TbDatabase, color: "#FF6B5E" },
@@ -45,7 +44,6 @@ export const skillCategories = [
     blurb: "Backend services and APIs in modern C#.",
     skills: [
       "C# / .NET",
-      ".NET Core",
       ".NET Framework",
       "ASP.NET Core",
       "Web API",

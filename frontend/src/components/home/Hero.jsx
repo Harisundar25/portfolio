@@ -102,9 +102,8 @@ export default function Hero() {
           {...fadeUp(0.9)}
           className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-text-body md:text-xl"
         >
-          I build C#/.NET backend software for{" "}
-          <span className="font-medium text-text-heading">WPC Qi wireless power</span> certification
-          systems — turning binary protocol packets and specification clauses into reliable, tested code.
+          I build <span className="font-medium text-text-heading">backend software in C# and .NET</span> —
+          ASP.NET Core REST APIs, clean object-oriented design and well-tested code that holds up in production.
         </motion.p>
 
         <motion.div {...fadeUp(1.05)} className="mt-10 flex flex-wrap items-center justify-center gap-4">

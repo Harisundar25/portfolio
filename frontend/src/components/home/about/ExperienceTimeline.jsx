@@ -33,7 +33,10 @@ function TimelineItem({ item }) {
           </span>
           <div>
             <h4 className="text-xl font-bold">{item.role}</h4>
-            <p className="text-sm text-text-muted">{item.company}</p>
+            <p className="text-sm text-text-muted">
+              {item.company}
+              {item.employmentType && ` · ${item.employmentType}`}
+            </p>
           </div>
         </div>
         <ul className="mt-5 space-y-2.5">

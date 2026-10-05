@@ -168,8 +168,8 @@ export default function PacketDecoder() {
       </div>
 
       <p className="mt-5 text-xs leading-relaxed text-text-muted">
-        Qi packets carry a header byte, message bytes and an XOR checksum. Parsing and validating them field by
-        field is a big part of my day job.
+        Qi packets carry a header byte, message bytes and an XOR checksum. Parsing and validating binary data like
+        this, field by field, is work I've done a lot of in C#.
       </p>
     </motion.div>
   );

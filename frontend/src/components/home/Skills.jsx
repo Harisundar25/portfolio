@@ -20,7 +20,7 @@ export default function Skills() {
               Engineering reliable systems in <span className="text-gradient-brand">C# and .NET</span>.
             </>
           }
-          description="From ASP.NET Core APIs to binary protocol decoders — the tools I use to build wireless-power compliance test software."
+          description="From ASP.NET Core APIs and SQL Server to binary protocol decoders — the tools I use to build reliable backend software in C#."
         />
 
         <IconCloud className="mt-16" />

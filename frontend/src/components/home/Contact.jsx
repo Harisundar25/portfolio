@@ -103,8 +103,8 @@ export default function Contact() {
             Get in <span className="text-gradient-brand">Touch</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-text-body">
-            Have a role, a project, or a question about C#/.NET or wireless-power software? My inbox is open — I'll
-            get back to you as soon as I can.
+            Have a role, a project, or a question about C# / .NET backend development? My inbox is open — I'll get
+            back to you as soon as I can.
           </p>
         </motion.div>
 

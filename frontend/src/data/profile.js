@@ -20,20 +20,18 @@ export const profile = {
 // Segments flagged with `hl` are rendered with the brand gradient.
 export const aboutStatement = [
   { text: "I'm Hari — a software engineer who builds" },
-  { text: "C#/.NET backend software", hl: true },
-  { text: "for" },
-  { text: "WPC Qi wireless power", hl: true },
-  { text: "certification systems. I enjoy the space where" },
-  { text: "hardware meets software:", hl: true },
-  { text: "decoding binary protocol packets, turning specification clauses into" },
-  { text: "test cases,", hl: true },
-  { text: "and chasing down the bugs that live in between." },
+  { text: "backend software in C# and .NET.", hl: true },
+  { text: "I enjoy designing" },
+  { text: "clean REST APIs,", hl: true },
+  { text: "shaping object-oriented code that stays easy to change, writing the" },
+  { text: "tests that keep it reliable,", hl: true },
+  { text: "and chasing down the bugs that hide in between." },
 ];
 
 export const aboutParagraphs = [
-  "Since my internship in 2023 I've been at Granite River Labs in Bengaluru, working on automated compliance test systems for Qi wireless charging — software used to validate wireless chargers and devices against the Wireless Power Consortium (WPC) specification.",
-  "Day to day that means ASP.NET Core and REST APIs, object-oriented modules that decode and encode binary packets from JSON API definitions, specification-based test cases for MPP-TPT / MPP-TPR systems, and a lot of packet-log and application-log analysis.",
-  "Outside work I learn by building — most recently porting my Python transcript tool to C# and wiring it to open-source AI models.",
+  "I'm a Software Engineer at GRL Platform Solutions in Bengaluru. Since starting as an intern in 2023, I've worked on C#/.NET software end to end — from designing components and APIs to testing, debugging and shipping production releases.",
+  "My core stack is C# with ASP.NET Core and Web API for REST services, and SQL Server for data. I lean on OOP, SOLID principles and design patterns — along with LINQ, async/await and dependency injection — to keep code readable, testable and easy to extend.",
+  "Quality is part of the job: unit, integration and regression testing, CI/CD with GitHub Actions, Git code reviews and methodical, log-driven debugging. Outside work I learn by building — most recently porting my Python transcript tool to C# and wiring it to open-source AI models.",
 ];
 
 export const quickFacts = [
@@ -49,32 +47,43 @@ export const stats = [
   { value: 60, suffix: "+", label: "Showstopper defects resolved" },
 ];
 
+// Roles, companies and dates mirror the LinkedIn Experience section.
 export const experience = [
   {
     role: "Software Engineer",
-    company: "Granite River Labs Technology Pvt. Ltd.",
-    location: "Bengaluru",
-    period: "Jun 2024 – Present",
+    company: "GRL Platform Solutions",
+    employmentType: "Full-time",
+    location: "Bengaluru · On-site",
+    period: "Apr 2026 – Present",
     current: true,
-    points: [
-      "Design and develop C#/.NET backend software for automated WPC Qi wireless power compliance test systems, delivering production releases (SW 3.220.x / 3.230.x) across Qi specification versions v2.0 – v2.3.",
-      "Build object-oriented modules for binary protocol packet decoding and encoding driven by JSON API definitions, with field-level parsing, validation and diagnostic logging.",
-      "Develop ASP.NET / REST API components linking backend services to the web-based tester application, and implement specification-based test cases for MPP-TPT / MPP-TPR systems.",
-      "Derive test cases from functional requirements and run structured pre-release validation — contributing to a 60% reduction in production defects.",
-      "Resolved 60+ showstopper defects through packet-log and application-log analysis and debugging.",
-      "Supported the implementation of GitHub runners for the team's CI/CD pipeline; practise unit testing and Git code reviews.",
-    ],
-    tags: ["C#", ".NET", "ASP.NET Core", "REST APIs", "JSON", "GitHub Actions"],
+    points: ["Software design and backend development in C# / .NET."],
+    tags: ["Software Design", "C#"],
   },
   {
-    role: "Software Engineer Intern",
-    company: "Granite River Labs Technology Pvt. Ltd.",
+    role: "Software Engineer",
+    company: "Granite River Labs Inc.",
+    employmentType: "Full-time",
+    location: "Bengaluru",
+    period: "Jun 2024 – Mar 2026",
+    points: [
+      "Designed and developed C#/.NET backend software for automated WPC Qi wireless power compliance test systems, delivering production releases (SW 3.220.x / 3.230.x) across Qi specification versions v2.0 – v2.3.",
+      "Built object-oriented modules for binary protocol packet decoding and encoding driven by JSON API definitions, with field-level parsing, validation and diagnostic logging.",
+      "Developed ASP.NET / REST API components linking backend services to the web-based tester application, and implemented specification-based test cases for MPP-TPT / MPP-TPR systems.",
+      "Derived test cases from functional requirements and ran structured pre-release validation — contributing to a 60% reduction in production defects.",
+      "Resolved 60+ showstopper defects through packet-log and application-log analysis and debugging.",
+      "Supported the implementation of GitHub runners for the team's CI/CD pipeline; practised unit testing and Git code reviews.",
+    ],
+    tags: ["Software Design", "Web Engineering", "C#", ".NET", "ASP.NET Core", "REST APIs", "JSON", "GitHub Actions"],
+  },
+  {
+    role: "Internship",
+    company: "Granite River Labs Inc.",
     location: "Bengaluru",
     period: "Sep 2023 – May 2024",
     points: [
       "Implemented and validated compliance test cases for the C3-TPT web application and fixed defects for WPC certification.",
     ],
-    tags: ["C#", "Compliance testing", "WPC Qi"],
+    tags: ["Test case development", "Unit Testing", "C#", "Compliance testing"],
   },
   {
     role: "B.E. Electronics & Communication Engineering",
