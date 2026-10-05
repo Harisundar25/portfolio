@@ -7,17 +7,24 @@ import SectionHeading from "../components/ui/SectionHeading";
 import IconTile from "../components/ui/IconTile";
 import ProjectCard from "../components/projects/ProjectCard";
 import ProjectDetailModal from "../components/projects/ProjectDetailModal";
+import TranscriptDemo from "../components/projects/demo/TranscriptDemo";
 import { projects, projectTech } from "../data/projects";
 
 export default function Projects() {
   // Keep the last project mounted while the modal plays its exit animation.
   const [selected, setSelected] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
   const openProject = useCallback((project) => {
     setSelected(project);
     setIsModalOpen(true);
   }, []);
   const closeModal = useCallback(() => setIsModalOpen(false), []);
+  const openDemo = useCallback(() => {
+    setIsModalOpen(false);
+    setIsDemoOpen(true);
+  }, []);
+  const closeDemo = useCallback(() => setIsDemoOpen(false), []);
 
   return (
     <>
@@ -60,7 +67,7 @@ export default function Projects() {
       <section id="work" className="relative z-10 px-6 pb-28 md:px-12">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2">
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} onSelect={openProject} />
+            <ProjectCard key={project.id} project={project} index={index} onSelect={openProject} onDemo={openDemo} />
           ))}
         </div>
       </section>
@@ -86,7 +93,8 @@ export default function Projects() {
         </motion.div>
       </section>
 
-      <ProjectDetailModal project={selected} isOpen={isModalOpen} onClose={closeModal} />
+      <ProjectDetailModal project={selected} isOpen={isModalOpen} onClose={closeModal} onDemo={openDemo} />
+      <TranscriptDemo isOpen={isDemoOpen} onClose={closeDemo} />
     </>
   );
 }

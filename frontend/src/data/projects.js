@@ -1,6 +1,7 @@
 import { AudioLines } from "lucide-react";
 import { SiDotnet, SiFfmpeg, SiGithubactions, SiHuggingface, SiJson, SiReact, SiYoutube } from "react-icons/si";
 import { TbBrandAzure, TbBrandCSharp, TbTestPipe } from "react-icons/tb";
+import { isDemoConnected } from "../lib/transcriptApi";
 import { profile } from "./profile";
 
 // "Built with" icon grid on the Projects page (mirrors the reference site's Skills grid).
@@ -54,7 +55,8 @@ export const projects = [
       "Optional translation to English and a manual source-language override",
       "FFmpeg downsampling (16 kHz mono) and automatic chunking to fit the API's 25 MB upload limit",
       "Retries with back-off on HTTP 429 rate limits, honouring the Retry-After header",
-      "One core library shared by a CLI and an ASP.NET Core minimal API, covered by xUnit tests",
+      "One core library shared by a CLI and an ASP.NET Core minimal API, covered by 150+ xUnit tests",
+      "Public demo API hardened with per-visitor rate limits, a daily quota, CORS and RFC 9457 problem details",
     ],
     notesTitle: "Good to know",
     notes: [
@@ -63,6 +65,8 @@ export const projects = [
     ],
     links: {
       source: `${profile.links.repo}/tree/main/backend`,
+      // The "Live demo" button appears once the API URL is configured (always in development).
+      demo: isDemoConnected,
     },
   },
   {
