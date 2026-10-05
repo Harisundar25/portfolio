@@ -1,0 +1,57 @@
+name: Deploy frontend (Azure Static Web Apps)
+
+# Builds the React site and uploads frontend/dist to Azure Static Web Apps. The upload is skipped
+# (with a notice) until the AZURE_STATIC_WEB_APPS_API_TOKEN secret exists — see docs/DEPLOYMENT.md, step 4.
+# Re-run it manually after changing API_BASE_URL: Vite bakes VITE_* values in at build time.
+
+on:
+  push:
+    branches: [main]
+    paths: ["frontend/**", ".github/workflows/deploy-frontend.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-frontend
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HAS_SWA_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Build
+        working-directory: frontend
+        env:
+          VITE_API_BASE_URL: ${{ vars.API_BASE_URL }}
+          VITE_EMAILJS_SERVICE_ID: ${{ vars.EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ vars.EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ vars.EMAILJS_PUBLIC_KEY }}
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to Static Web Apps
+        if: env.HAS_SWA_TOKEN == 'true'
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: frontend/dist
+          skip_app_build: true
+          skip_api_build: true
+
+      - name: Deployment skipped
+        if: env.HAS_SWA_TOKEN != 'true'
+        run: echo "::notice::AZURE_STATIC_WEB_APPS_API_TOKEN is not set, so the site was built but not deployed. See docs/DEPLOYMENT.md."
