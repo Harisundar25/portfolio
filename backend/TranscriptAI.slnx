@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TranscriptAI.Core/TranscriptAI.Core.csproj" />
+    <Project Path="src/TranscriptAI.Cli/TranscriptAI.Cli.csproj" />
+    <Project Path="src/TranscriptAI.Api/TranscriptAI.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TranscriptAI.Tests/TranscriptAI.Tests.csproj" />
+  </Folder>
+</Solution>

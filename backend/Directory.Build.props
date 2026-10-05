@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+    <Authors>Hari Sundar</Authors>
+    <Company>Hari Sundar</Company>
+    <Product>TranscriptAI</Product>
+    <Copyright>Copyright (c) 2026 Hari Sundar</Copyright>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+</Project>

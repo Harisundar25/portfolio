@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>TranscriptAI.Core</RootNamespace>
+    <Description>Transcription pipeline: media acquisition (local files / YouTube), FFmpeg audio preparation and Whisper inference through the Groq or Hugging Face APIs.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="YoutubeExplode" />
+    <PackageReference Include="Microsoft.Extensions.Http" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TranscriptAI.Tests" />
+  </ItemGroup>
+
+</Project>

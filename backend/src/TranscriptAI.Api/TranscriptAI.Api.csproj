@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <RootNamespace>TranscriptAI.Api</RootNamespace>
+    <Description>Minimal API behind the portfolio's live transcript demo.</Description>
+    <UserSecretsId>transcriptai-api-7d3f2a90-portfolio</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TranscriptAI.Core\TranscriptAI.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TranscriptAI.Tests" />
+  </ItemGroup>
+
+</Project>
