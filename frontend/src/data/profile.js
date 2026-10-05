@@ -133,6 +133,18 @@ export const certifications = [
     date: "May 2026",
     url: "https://verify.skilljar.com/c/qcrao5d96pz3",
   },
+  {
+    title: "Introduction to Agent Skills",
+    issuer: "Anthropic Education",
+    date: "Oct 2026",
+    url: "https://verify.skilljar.com/c/t5je7jhe6x5y",
+  },
+  {
+    title: "Introduction to Subagents",
+    issuer: "Anthropic Education",
+    date: "Oct 2026",
+    url: "https://verify.skilljar.com/c/8of6vpnbjp64",
+  },
 ];
 
 export const languages = [
