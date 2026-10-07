@@ -39,8 +39,7 @@ export default function Footer() {
           className="underline decoration-dotted underline-offset-4 transition-colors hover:text-text-muted"
         >
           awwwards-style-portfolio-2026
-        </a>{" "}
-        by Jeeva V (MIT).
+        </a>
       </p>
     </footer>
   );
